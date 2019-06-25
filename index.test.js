@@ -1,4 +1,4 @@
-const { map, filter, findIndex } = require('./index');
+const { map, filter, findIndex , reduce} = require('./index');
 
 describe('array methods', () => {
 
@@ -87,6 +87,8 @@ describe('array methods', () => {
       expect(index).toEqual(-1);
     });
   });
+
+  describe('')
 });
 
 
