@@ -13,22 +13,28 @@ function map(arr, callback) {
 function filter(arr, callback) {
     const filtered = [];
     for( let i = 0; i < arr.length; i++) {
-        filtered[i] = callback(arr[i])
+        if(callback = true) {
+            callback(arr[i])
+        } else {
+            []
+        }
     }
     return filtered;
+
+
 //find index function
-function forInfdex(arr, callback) {
-    for( let i = 0; i < arr.length; i++) {
-        const firstIndex = Number
+// function forInfdex(arr, callback) {
+//     for( let i = 0; i < arr.length; i++) {
+//         const firstIndex = Number
         
-    } 
-}
+//     } 
+// }
 //reduce function
 
 //every function
 
 
 module.exports = { 
-    map,
+    filter,
 
 }
