@@ -2,11 +2,11 @@ const nums = [1, 2, 3, 4, 45];
 //map function
  
 function map(arr, callback) {
-    const maped = [];
+    const mapped = [];
     for( let i = 0; i < arr.length; i++) {
-        maped[i] = callback(arr[i])
+        mapped[i] = callback(arr[i])
     }
-    return maped;
+    return mapped;
 }
     
 //filter function
