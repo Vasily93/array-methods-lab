@@ -1,24 +1,80 @@
-const { filter } = requiare('./index.js');
+const { map, filter, findIndex } = require('./index');
 
-describe('filter function', () => {
+describe('array methods', () => {
+
+  describe('map function', () => {
     it('returns an array', () => {
-        const numbers = [1, 2, 3];
-        const filtered = filter(numbers, number => number * 2);
-    })
-})
+      const numbers = [1, 2, 3];
+      const mapped = map(numbers, number => number * 2);
 
-// decribe('map function', () => {
-//     it('returns ad array', () =>{
-//         const numbers = [1, 2, 3];
-//         const mapped = map(numbers, number => number * 2);
+      expect(mapped).toEqual(expect.any(Array));
+    });
 
-//         expect(mapped).toEqual(expect.any(Array));
-//     });
+    it('returns a mapped array with the same length as arr', () => {
+      const colors = ['red', 'green', 'blue', 'yellow'];
+      const mapped = map(colors, color => color.toUpperCase());
 
-//     it('returns a mapped array', ()=> {
-//         const colors = ['red', 'green'];
-//         const mapped = map[colors, color => color.]
+      // expect(mapped.length).toEqual(colors.length);
+      expect(mapped).toHaveLength(colors.length);
+    });
 
-//         expect(mapped).toHaveLength(colors.length)
-//     })
-// }) 
+    it('returns a mapped array with uppercase colors', () => {
+      const colors = ['red', 'green', 'blue', 'yellow'];
+      const mapped = map(colors, color => color.toUpperCase());
+
+      expect(mapped).toEqual([
+        'RED',
+        'GREEN',
+        'BLUE',
+        'YELLOW'
+      ]);
+    });
+
+    it('returns a mapped array with doubled numbers', () => {
+      const numbers = [1, 2, 3, 4];
+      const mapped = map(numbers, number => number * 2);
+
+      expect(mapped).toEqual([
+        2,
+        4,
+        6,
+        8
+      ]);
+    });
+  });
+
+  describe('filter function', () => {
+    it('returns an array', () => {
+      const numbers = [1, 2, 3];
+      const filtered = filter(
+        numbers,
+        number => number % 2 === 0
+      );
+
+      expect(filtered).toEqual(expect.any(Array));
+    });
+  });
+
+  it('filters out odd numbers', () => {
+    const numbers = [1, 2, 3, 4];
+    const evens = filter(
+      numbers,
+      number => number % 2 === 0
+    );
+
+    expect(evens).toEqual([2, 4]);
+  });
+
+  describe('find index function', () => {
+      it('returns a number', () => {
+        const colors = ['red', 'blue'];
+        const index = findIndex(
+            cplors, color =>  
+        );
+
+        expect(index). toEqual(expect.any(Number));
+      })
+  })
+});
+
+
