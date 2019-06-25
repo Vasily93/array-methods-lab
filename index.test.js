@@ -65,16 +65,28 @@ describe('array methods', () => {
     expect(evens).toEqual([2, 4]);
   });
 
-  describe('find index function', () => {
-      it('returns a number', () => {
-        const colors = ['red', 'blue'];
-        const index = findIndex(
-            cplors, color =>  
-        );
+  describe('findIndex', () => {
+    it('returns a number', () => {
+      const colors = ['red', 'blue', 'green'];
+      const index = findIndex(colors, color => color.includes('l'));
 
-        expect(index). toEqual(expect.any(Number));
-      })
-  })
+      expect(index).toEqual(expect.any(Number));
+    });
+
+    it('returns the index of a matching item', () => {
+      const colors = ['red', 'blue', 'green'];
+      const index = findIndex(colors, color => color.includes('l'));
+
+      expect(index).toEqual(1);
+    });
+
+    it('returns -1 if no match', () => {
+      const colors = ['red', 'blue', 'green'];
+      const index = findIndex(colors, color => color.includes('y'));
+
+      expect(index).toEqual(-1);
+    });
+  });
 });
 
 

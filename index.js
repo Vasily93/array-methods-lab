@@ -28,13 +28,12 @@ function map(arr, callback) {
   }
 
   function findIndex(arr, callback) {
-    const index = Number
     for(let i = 0; i < arr.length; i++) {
-        if()
+        if(callback(arr[i])) return i;
+    }
+    return -1;
     }
 
-    return index;
-}
   
   module.exports = {
     map,
