@@ -36,6 +36,12 @@ function map(arr, callback) {
 
     function reduce(arr, callback, initialValue) {
         let acc = initialValue;
+        let i = 0;
+        if(initialValue === undefined) {
+            acc = arr[0];
+            i = 1;
+        }
+        
         for(let i = 0; i < arr.length; i++) {
             acc = callback(acc, arr[i]);
         }
